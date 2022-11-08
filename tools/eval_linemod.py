@@ -15,7 +15,7 @@ import torchvision.datasets as dset
 import torchvision.transforms as transforms
 import torchvision.utils as vutils
 from torch.autograd import Variable
-from datasets.linemod.dataset import PoseDataset as PoseDataset_linemod
+from mydata.linemod.dataset import PoseDataset as PoseDataset_linemod
 from lib.network import PoseNet, PoseRefineNet
 from lib.loss import Loss
 from lib.loss_refiner import Loss_refine
@@ -33,7 +33,7 @@ objlist = [1, 2, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15]
 num_points = 500
 iteration = 4
 bs = 1
-dataset_config_dir = 'datasets/linemod/dataset_config'
+dataset_config_dir = 'mydata/linemod/dataset_config'
 output_result_dir = 'experiments/eval_result/linemod'
 knn = KNearestNeighbor(1)
 
