@@ -56,7 +56,7 @@ criterion_refine = Loss_refine(num_points_mesh, sym_list)
 
 diameter = []
 meta_file = open('{0}/models_info.yml'.format(dataset_config_dir), 'r')
-meta = yaml.load(meta_file)
+meta = yaml.load(meta_file, Loader=yaml.FullLoader)
 for obj in objlist:
     diameter.append(meta[obj]['diameter'] / 1000.0 * 0.1)
 print(diameter)
