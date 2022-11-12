@@ -123,7 +123,7 @@ for i, data in enumerate(testdataloader, 0):
     if idx[0].item() in sym_list:
         pred = torch.from_numpy(pred.astype(np.float32)).cuda().transpose(1, 0).contiguous()
         target = torch.from_numpy(target.astype(np.float32)).cuda().transpose(1, 0).contiguous()
-        inds = knn(target.unsqueeze(0), pred.unsqueeze(0))
+        inds = KNearestNeighbor.apply(target.unsqueeze (0), pred.unsqueeze(0))
         target = torch.index_select(target, 1, inds.view(-1) - 1)
         dis = torch.mean(torch.norm((pred.transpose(1, 0) - target.transpose(1, 0)), dim=1), dim=0).item()
     else:
